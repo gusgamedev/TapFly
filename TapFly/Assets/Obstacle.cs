@@ -13,4 +13,14 @@ public class Obstacle : MonoBehaviour {
     }
 
     
+    private void OnCollisionEnter2D(Collision2D hit) {
+       
+        if (hit.gameObject.CompareTag("Player")) {
+            
+            GetComponentInParent<SpawnObstacles>().StopSpawn();
+            speed = 0;
+            
+
+        }
+    }
 }

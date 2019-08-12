@@ -32,7 +32,11 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D hit) {
         //TODO col with score area
+
+        if (hit.CompareTag("Score")) {
+            GameManager.instance.score++;
+        }
     }
 }
